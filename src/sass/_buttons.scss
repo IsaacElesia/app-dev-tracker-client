@@ -1,0 +1,89 @@
+%btn {
+	font-size: 1em;
+	margin-right: 0.5em;
+	padding: 0.2em 0.5em;
+	border: 0;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.btn {
+	&-assign,
+	&-team,
+	&-delete,
+	&-edit {
+		@extend %btn;
+	}
+}
+
+.btn-submit {
+	font-size: 1.5em;
+	line-height: 2em;
+	padding: 0 1.5em;
+	margin: 0.5em 0 2em 0;
+	border: 0;
+	border-radius: 10px;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.btn-action {
+	a {
+		font-size: 1.5em;
+		line-height: 2em;
+		padding: 0.5em 1em;
+		text-decoration: none;
+		text-transform: capitalize;
+		color: $textCol-1;
+		border: 0;
+		border-radius: 10px;
+		background-color: $color-2;
+
+		&:hover {
+			cursor: pointer;
+			background-color: $color-1;
+		}
+	}
+
+	button {
+		font-size: 1.5em;
+		padding: 0.5em 1em;
+		text-transform: capitalize;
+		color: $textCol-1;
+		border: 0;
+		border-radius: 10px;
+		background-color: $color-2;
+
+		&:hover {
+			cursor: pointer;
+			background-color: $color-1;
+		}
+	}
+}
+
+.btn-modal {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 5rem;
+
+	.btn-delete {
+		font-size: 1.5em;
+		padding: 0.4em 1.2em;
+		border: none;
+		border-radius: 1rem;
+		margin-bottom: 2rem;
+		color: #fff;
+		background-color: blue;
+		box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
+	}
+
+	.delete {
+		margin-right: 2rem;
+		background-color: rgb(226, 5, 5);
+	}
+}

@@ -1,0 +1,145 @@
+.burger-nav {
+	display: none;
+}
+
+.page-nav {
+	@include display-flex(column);
+	margin: 0 auto;
+	width: 90%;
+	max-width: 700px;
+	padding: 5rem 0 5rem 0;
+
+	&-main {
+		display: flex;
+		justify-content: space-between;
+		text-align: left;
+		background-color: $color-2;
+		color: $textCol-1;
+		width: 100%;
+		position: fixed;
+	}
+
+	&-btn,
+	&-icons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.nav-btn,
+		.back-icon {
+			display: block;
+			border: 0;
+			text-transform: uppercase;
+			color: $textCol-1;
+			background-color: $color-2;
+			padding: 1.8rem;
+
+			&:hover {
+				cursor: pointer;
+				background-color: #eee;
+				color: $color-3;
+			}
+		}
+
+		.logout-btn {
+			margin-left: 3rem;
+		}
+
+		.back-icon {
+			font-family: 'Roboto', 'Helvetica Neue', helvetica, sans-serif;
+			font-weight: 300;
+			text-transform: capitaliz;
+			font-size: 1.8em;
+			padding: 1.2rem;
+		}
+	}
+}
+
+.page {
+	display: flex;
+	justify-content: center;
+
+	width: 90%;
+	max-width: 1100px;
+	//	background-color: red;
+	margin: 0 auto;
+	padding-top: 5rem;
+
+	.description {
+		width: 30%;
+		//	max-width: 400px;
+		margin: 3rem auto;
+		//	position: relative;
+
+		.img {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		}
+
+		.h3 {
+			font-weight: 700;
+		}
+
+		p {
+			font-size: 1.1em;
+			line-height: 1.6em;
+			margin: 2rem 0 0 1rem;
+		}
+	}
+
+	.page-main {
+		width: 70%;
+		max-width: 750px;
+		margin: 3rem auto;
+
+		.secondary-nav {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.page-img {
+	margin-top: 2rem;
+	max-width: 80%;
+}
+
+.section-img {
+	float: left;
+	max-width: 21%;
+	margin: 0 2rem 0 0rem;
+}
+
+@media (max-width: 900px) {
+	.page {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.description {
+			width: 90%;
+			max-width: 600px;
+
+			.h3 {
+				text-align: center;
+			}
+		}
+
+		.page-main {
+			width: 100%;
+			max-width: 850px;
+		}
+	}
+}
+
+@media (max-width: 720px) {
+	.page-nav-main {
+		display: none;
+	}
+
+	.burger-nav {
+		display: block;
+	}
+}

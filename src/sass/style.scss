@@ -1,0 +1,25 @@
+@import 'config';
+@import 'utilities';
+@import 'navbars';
+@import 'buttons';
+@import 'forms';
+@import 'card';
+@import 'dashboard';
+@import 'page';
+@import 'createSection';
+@import 'taskDetails';
+@import 'landingpage';
+@import 'modal';
+@import 'users';
+@import 'burgerNav';
+
+html {
+	box-sizing: border-box;
+	font-size: 10px;
+}
+
+body {
+	box-sizing: inherit;
+	font-family: 'Helvetica Neue', helvetica, 'Roboto', sans-serif;
+	font-size: 1.5rem;
+}

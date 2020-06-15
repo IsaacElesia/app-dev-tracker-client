@@ -1,0 +1,72 @@
+.content,
+.image {
+	width: 100%;
+
+	img {
+		width: 100%;
+		margin-top: 2rem;
+	}
+
+	p {
+		font-size: 1.3em;
+		line-height: 1.8em;
+		width: 80%;
+		margin: 10% auto 0;
+	}
+}
+
+.banner {
+	height: 100vh;
+	border-bottom: 0.5px solid $color-1;
+
+	.call-to-action {
+		display: flex;
+		justify-content: space-around;
+		margin: 5rem 0;
+	}
+}
+
+.app-use {
+	height: 100vh;
+	border-bottom: 0.5px solid $color-1;
+	margin-top: 3rem;
+}
+
+@media (min-width: 600px) {
+	.content,
+	.image {
+		width: 50%;
+		position: relative;
+
+		.h2-landing {
+			margin: 0 0 2rem 2rem;
+		}
+
+		p {
+			max-width: 400px;
+			margin: 0 auto;
+		}
+	}
+
+	.banner {
+		display: flex;
+		flex-direction: row-reverse;
+
+		.call-to-action {
+			margin-top: 10rem;
+		}
+
+		p {
+			margin: 15rem auto 0;
+		}
+	}
+
+	.app-use {
+		display: flex;
+		height: 60vh;
+	}
+
+	.reverse {
+		flex-direction: row-reverse;
+	}
+}

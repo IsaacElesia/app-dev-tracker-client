@@ -1,0 +1,97 @@
+.card {
+	@include set-bg-color($color-1);
+	margin: 0 auto 2.5rem;
+	max-width: 60%;
+	min-width: 300px;
+	border-radius: 10px;
+	box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
+
+	&-project {
+		@include display-flex(row);
+	}
+
+	.actions {
+		@include display-flex(row);
+		justify-content: space-between;
+	}
+
+	&-details {
+		margin-left: 1rem;
+		text-align: left;
+		line-height: 3rem;
+		width: 100%;
+
+		.name {
+			font-size: 2rem;
+			text-transform: capitalize;
+		}
+
+		.user-name {
+			font-size: 1.5rem;
+			text-transform: capitalize;
+			color: set-text-color($textCol-1);
+		}
+		.user-email {
+			font-size: 1.5rem;
+			color: set-text-color($textCol-1);
+		}
+
+		.task {
+			font-size: 1.1em;
+			line-height: 1.4em;
+			margin-top: 0.5rem;
+		}
+
+		.due {
+			text-transform: capitalize;
+		}
+
+		.title {
+			font-weight: 700;
+			padding-right: 1rem;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: set-text-color($textCol-1);
+	}
+}
+
+/* **************************
+          Status
+*****************************/
+.status {
+	max-width: 2rem;
+	min-height: 100%;
+
+	p {
+		font-size: 1rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		margin: 0rem -2rem;
+		padding: 0rem 2rem;
+		transform: rotate(180deg);
+		writing-mode: vertical-lr;
+	}
+}
+
+.on-time {
+	padding: 2.5rem 0.5rem;
+	@include set-bg-color($green);
+}
+
+.past-due {
+	padding: 2.2rem 0.5rem;
+	@include set-bg-color($red);
+}
+
+.completed {
+	padding: 2rem 0.5rem;
+	@include set-bg-color($blue);
+}
+
+.runing-late {
+	padding: 3.5rem 0.5rem;
+	@include set-bg-color($orange);
+}

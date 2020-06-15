@@ -1,0 +1,43 @@
+.secondary-nav {
+	&-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 2rem;
+	}
+
+	button,
+	a {
+		font-size: 2rem;
+		text-transform: uppercase;
+		color: black;
+		padding: 1.5rem;
+		border: 0px;
+		background-color: #fff;
+
+		&:hover {
+			cursor: pointer;
+			background-color: #eee;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.icon {
+		color: $color-2;
+	}
+}
+
+@media (max-width: 600px) {
+	.secondary-nav {
+		ul {
+			font-size: 3rem;
+		}
+
+		.li-name {
+			display: none;
+		}
+	}
+}

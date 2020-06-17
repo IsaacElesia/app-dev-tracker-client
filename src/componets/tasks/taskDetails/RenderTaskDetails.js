@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TimeService from '../../../services/time-service';
 import TaskContext from '../../../context/TaskContext';
+import MainNav from '../../layouts/MainNav';
 
 export class RenderTaskDetails extends Component {
 	static contextType = TaskContext;
@@ -9,55 +10,13 @@ export class RenderTaskDetails extends Component {
 		return (
 			<>
 				<main className='task-details'>
-					<div className='task-details-header'>
-						<div className='task-details-icons'>
-							<i
-								className=' back-icon'
-								onClick={() => this.props.history.goBack()}
-							>
-								<i className='fas fa-arrow-alt-circle-left'></i>
-							</i>
-							<h2 className='h2-section'>Task Details</h2>
-						</div>
-
-						<div className='task-details-btn'>
-							<button
-								className='nav-btn'
-								name='assign'
-								onClick={(e) => this.props.handleClick(e)}
-							>
-								Asign
-							</button>
-							<button
-								className='nav-btn'
-								name='team'
-								onClick={(e) => this.props.handleClick(e)}
-							>
-								Team
-							</button>
-							<button
-								className='nav-btn'
-								name='editTask'
-								onClick={(e) => this.props.handleClick(e)}
-							>
-								Edit
-							</button>
-							<button
-								className='nav-btn'
-								name='deleteTask'
-								onClick={(e) => this.props.handleClick(e)}
-							>
-								Delete
-							</button>
-							<button
-								className='nav-btn logout-btn'
-								name='loggedOut'
-								onClick={() => this.props.logOut()}
-							>
-								log out
-							</button>
-						</div>
-					</div>
+					<MainNav
+						name={'Task details'}
+						history={this.props.history}
+						destination={`/sections/${task.sectionId}`}
+						handleClick={this.props.handleClick}
+						taskClass={'task-details-header'}
+					/>
 
 					<div className='task-details-main'>
 						<p className='due'>

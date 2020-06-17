@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const TaskContext = React.createContext({
 	tasks: [],
 	task: {},
-	completed: false,
+	filterdTask: null,
 });
 export default TaskContext;
 
@@ -11,7 +11,7 @@ export class TaskProvider extends Component {
 	state = {
 		tasks: [],
 		task: {},
-		completed: false,
+		filterdTask: null,
 	};
 
 	setTasks = (tasks) => {
@@ -22,8 +22,8 @@ export class TaskProvider extends Component {
 		this.setState({ task });
 	};
 
-	setCompleted = (completed) => {
-		this.setState({ completed });
+	setFilterdTask = (filterdTask) => {
+		this.setState({ filterdTask });
 	};
 
 	render() {
@@ -32,8 +32,8 @@ export class TaskProvider extends Component {
 			setTasks: this.setTasks,
 			task: this.state.task,
 			setTask: this.setTask,
-			completed: this.state.completed,
-			setCompleted: this.setCompleted,
+			filterdTask: this.state.filterdTask,
+			setFilterdTask: this.setFilterdTask,
 		};
 		return (
 			<TaskContext.Provider value={value}>

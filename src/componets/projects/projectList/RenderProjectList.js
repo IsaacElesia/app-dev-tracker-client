@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import TimeService from '../../../services/time-service';
+import ProjectContext from '../../../context/ProjectsContext';
 
 export class RenderProjectList extends Component {
+	static contextType = ProjectContext;
+
 	renderProjects = () => {
-		const { projects } = this.props.context;
-		return projects.map((project) => {
+		const { projects, filterdProjects } = this.context;
+		let projectRender = [];
+
+		if (filterdProjects) {
+			projects.forEach((project) => {
+				if (project.completed) {
+					projectRender.push(project);
+				}
+			});
+		} else {
+			projectRender = projects;
+		}
+
+		return projectRender.map((project) => {
 			return (
 				<div className='card' key={project.projectId}>
 					<div className='card-project'>
 						<div
-							className={`status ${TimeService.dueTime(project.dueDate).class}`}
+							className={`status ${
+								TimeService.dueTime(project.dueDate, project.completed).class
+							}`}
 						>
-							<p>{TimeService.dueTime(project.dueDate).status}</p>
+							<p>
+								{TimeService.dueTime(project.dueDate, project.completed).status}
+							</p>
 						</div>
 						<div className='card-details'>
 							<NavLink to={`/projects/${project.projectId}`}>

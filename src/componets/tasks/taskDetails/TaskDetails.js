@@ -13,8 +13,8 @@ export class TaskDetails extends Component {
 	state = {
 		assign: false,
 		team: false,
-		deleteTask: false,
-		editTask: false,
+		deleteItem: false,
+		edit: false,
 		id: '',
 		teamMembers: [],
 		completed: false,
@@ -61,8 +61,8 @@ export class TaskDetails extends Component {
 		this.setState({
 			assign: false,
 			team: false,
-			deleteTask: false,
-			editTask: false,
+			deleteItem: false,
+			edit: false,
 		});
 	};
 
@@ -72,7 +72,7 @@ export class TaskDetails extends Component {
 	};
 
 	showModal = (task) => {
-		const { id, assign, team, deleteTask, editTask, teamMembers } = this.state;
+		const { id, assign, team, deleteItem, edit, teamMembers } = this.state;
 
 		if (assign) {
 			return (
@@ -97,7 +97,7 @@ export class TaskDetails extends Component {
 			);
 		}
 
-		if (deleteTask) {
+		if (deleteItem) {
 			return (
 				<DeletPage
 					handleClose={this.handleClose}
@@ -106,12 +106,12 @@ export class TaskDetails extends Component {
 					endPoint={`tasks/${id}`}
 					pageName={'Delete Task'}
 					goBack={this.props.history.goBack}
-					open={deleteTask}
+					open={deleteItem}
 				/>
 			);
 		}
 
-		if (editTask) {
+		if (edit) {
 			return (
 				<EditTask
 					handleClose={this.handleClose}

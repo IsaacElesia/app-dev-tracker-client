@@ -15,23 +15,33 @@ export class TaskList extends Component {
 		deleteTask: false,
 		id: '',
 		teamMembers: [],
+		taskLenght: 0,
+		numCompleted: 0,
 	};
 
 	componentDidMount() {
 		try {
-			this.fetchTasks().then((tasks) => this.filterTasks(tasks));
+			this.fetchTasks().then((tasks) => {
+				this.filterTasks(tasks);
+			});
 		} catch (err) {
 			console.log(err);
 		}
 	}
 
-	/* 	componentDidUpdate() {
-		try {
-			this.fetchTasks().then((tasks) => this.filterTasks(tasks));
-		} catch (err) {
-			console.log(err);
+	updateCompleted = () => {
+		const { taskLenght, numCompleted } = this.state;
+		let body = false;
+		if (taskLenght !== 0 && numCompleted !== 0) {
+			if (taskLenght === numCompleted) {
+				body = true;
+			}
 		}
-	} */
+
+		ApiService.updateItem(`sections/${this.props.sectionId}`, {
+			completed: body,
+		});
+	};
 
 	fetchTasks = () => {
 		return ApiService.getItems('tasks').then((tasks) => {
@@ -41,10 +51,20 @@ export class TaskList extends Component {
 
 	filterTasks = (tasks) => {
 		const filterdTasks = tasks.filter((task) => {
+			if (task.sectionId === Number(this.props.sectionId) && task.completed)
+				this.setNumCompleted();
 			return task.sectionId === Number(this.props.sectionId);
 		});
-
+		this.setTaskLength(filterdTasks.length);
 		this.context.setTasks(filterdTasks);
+	};
+
+	setTaskLength = (length) => {
+		this.setState({ taskLenght: length });
+	};
+
+	setNumCompleted = () => {
+		this.setState({ numCompleted: this.state.numCompleted + 1 });
 	};
 
 	handleClick = (e, id) => {
@@ -112,6 +132,7 @@ export class TaskList extends Component {
 	};
 
 	render() {
+		this.updateCompleted();
 		return (
 			<>
 				<RenderTaskList
@@ -119,6 +140,8 @@ export class TaskList extends Component {
 					handleClick={this.handleClick}
 					handleClose={this.handleClose}
 					showModal={this.showModal}
+					setNumCompleted={this.setNumCompleted}
+					setTaskLength={this.setTaskLength}
 				/>
 			</>
 		);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SectionContext from '../../../context/SectionsContext';
+import TaskContext from '../../../context/TaskContext';
 import MainNav from '../../layouts/MainNav';
 import SecondaryNav from '../../layouts/SecondaryNav';
 import TaskList from '../../tasks/taskList/TaskList';
@@ -33,10 +34,17 @@ export class RenderSectionDetails extends Component {
 
 					<section className='page-main'>
 						{
-							<SecondaryNav
-								page={'Task'}
-								link1={`/newtask/${section.sectionId}`}
-							/>
+							<TaskContext>
+								{({ setFilterdTask }) => {
+									return (
+										<SecondaryNav
+											page={'Task'}
+											link1={`/newtask/${section.sectionId}`}
+											setContext={setFilterdTask}
+										/>
+									);
+								}}
+							</TaskContext>
 						}
 						{
 							<TaskList

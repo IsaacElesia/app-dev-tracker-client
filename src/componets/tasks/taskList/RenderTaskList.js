@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TimeService from '../../../services/time-service';
+import TaskContext from '../../../context/TaskContext';
 
 export class RenderTaskList extends Component {
+	static contextType = TaskContext;
 	renderTasks = () => {
-		const { tasks } = this.props.context;
+		const { tasks, filterdTask } = this.context;
+		let taskToRender = [];
 
-		return tasks.map((task) => {
+		if (filterdTask) {
+			tasks.forEach((task) => {
+				if (task.completed) {
+					taskToRender.push(task);
+				}
+			});
+		} else {
+			taskToRender = tasks;
+		}
+
+		return taskToRender.map((task) => {
 			return (
 				<div className='card' key={task.taskId}>
 					<div className='card-project'>
 						<div
-							className={`status ${TimeService.dueTime(task.dueDate).class}`}
+							className={`status ${
+								TimeService.dueTime(task.dueDate, task.completed).class
+							}`}
 						>
-							<p>{TimeService.dueTime(task.dueDate).status}</p>
+							<p>{TimeService.dueTime(task.dueDate, task.completed).status}</p>
 						</div>
 						<div className='card-details'>
 							<Link to={`/tasks/${task.taskId}`}>

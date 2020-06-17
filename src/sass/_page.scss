@@ -22,7 +22,7 @@
 	&-btn,
 	&-icons {
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-start;
 		align-items: center;
 
 		.nav-btn,
@@ -135,7 +135,9 @@
 }
 
 @media (max-width: 720px) {
-	.page-nav-main {
+	.page-nav-main,
+	.task-details-btn,
+	.task-details-icons {
 		display: none;
 	}
 

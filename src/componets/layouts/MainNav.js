@@ -19,6 +19,10 @@ export class MainNav extends Component {
 		}
 	}
 
+	taskClass = () => {
+		if (this.props.taskClass) return this.props.taskClass;
+	};
+
 	loogOut = () => {
 		TokenService.clearAuthToken();
 		this.props.history.push('/');
@@ -45,7 +49,7 @@ export class MainNav extends Component {
 			</header>
 		) : (
 			<>
-				<div className='page-nav-main'>
+				<div className={`page-nav-main ${this.taskClass()}`}>
 					<div className='page-nav-icons'>
 						<i
 							className=' back-icon'
@@ -100,6 +104,7 @@ export class MainNav extends Component {
 					history={this.props.history}
 					destination={this.props.destination}
 					name={this.props.name}
+					taskClass={this.props.taskClass}
 				/>
 			</>
 		);

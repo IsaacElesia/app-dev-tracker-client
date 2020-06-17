@@ -21,10 +21,14 @@ export class BurgerNav extends Component {
 		}
 	};
 
+	taskClass = () => {
+		if (this.props.taskClass) return this.props.taskClass;
+	};
+
 	render() {
 		const { open } = this.state;
 		return (
-			<div className='burger-nav'>
+			<div className={`burger-nav ${this.taskClass()}`}>
 				<div className='page-nav-icons burger'>
 					<i
 						className=' back-icon'

@@ -6,7 +6,10 @@ const TimeService = {
 		return m;
 	},
 
-	dueTime(dueDate) {
+	dueTime(dueDate, completed) {
+		if (completed) {
+			return { class: 'completed', status: 'completed' };
+		}
 		const due = moment(dueDate);
 		const now = moment();
 		const m = due.diff(now, 'days', true);

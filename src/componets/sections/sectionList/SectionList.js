@@ -15,6 +15,9 @@ export class SectionList extends Component {
 		deleteSection: false,
 		id: '',
 		teamMembers: [],
+		projectId: '',
+		sectionLenght: 0,
+		numCompleted: 0,
 	};
 
 	componentDidMount() {
@@ -25,6 +28,20 @@ export class SectionList extends Component {
 		}
 	}
 
+	updateCompleted = () => {
+		const { sectionLenght, numCompleted } = this.state;
+		let body = false;
+		if (sectionLenght !== 0 && numCompleted !== 0) {
+			if (sectionLenght === numCompleted) {
+				body = true;
+			}
+		}
+
+		ApiService.updateItem(`projects/${this.props.projectId}`, {
+			completed: body,
+		});
+	};
+
 	fetchSections = () => {
 		return ApiService.getItems('sections').then((sections) => {
 			return sections;
@@ -33,10 +50,22 @@ export class SectionList extends Component {
 
 	filterSections = (sections) => {
 		const filterdSections = sections.filter((sec) => {
+			if (sec.projectId === Number(this.props.projectId) && sec.completed) {
+				this.setNumCompleted();
+			}
 			return sec.projectId === Number(this.props.projectId);
 		});
 
+		this.setSectionLength(filterdSections.length);
 		this.context.setSections(filterdSections);
+	};
+
+	setSectionLength = (length) => {
+		this.setState({ sectionLenght: length });
+	};
+
+	setNumCompleted = () => {
+		this.setState({ numCompleted: this.state.numCompleted + 1 });
 	};
 
 	handleClick = (e, id) => {
@@ -104,6 +133,7 @@ export class SectionList extends Component {
 	};
 
 	render() {
+		this.updateCompleted();
 		return (
 			<>
 				<RenderSectionList

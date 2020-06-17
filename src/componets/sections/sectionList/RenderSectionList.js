@@ -1,19 +1,37 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import TimeService from '../../../services/time-service';
+import SectionsContext from '../../../context/SectionsContext';
 
 export class RenderSectionList extends Component {
-	renderSections = () => {
-		const { sections } = this.props.context;
+	static contextType = SectionsContext;
 
-		return sections.map((section) => {
+	renderSections = () => {
+		const { filterdSections, sections } = this.context;
+		let sectionsToRender = [];
+
+		if (filterdSections) {
+			sections.forEach((section) => {
+				if (section.completed) {
+					sectionsToRender.push(section);
+				}
+			});
+		} else {
+			sectionsToRender = sections;
+		}
+
+		return sectionsToRender.map((section) => {
 			return (
 				<div className='card' key={section.sectionId}>
 					<div className='card-project'>
 						<div
-							className={`status ${TimeService.dueTime(section.dueDate).class}`}
+							className={`status ${
+								TimeService.dueTime(section.dueDate, section.completed).class
+							}`}
 						>
-							<p>{TimeService.dueTime(section.dueDate).status}</p>
+							<p>
+								{TimeService.dueTime(section.dueDate, section.completed).status}
+							</p>
 						</div>
 						<div className='card-details'>
 							<NavLink to={`/sections/${section.sectionId}`}>

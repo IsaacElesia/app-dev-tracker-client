@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProjectsContext from '../../../context/ProjectsContext';
+import SectionsContext from '../../../context/SectionsContext';
 import MainNav from '../../layouts/MainNav';
 import SecondaryNav from '../../layouts/SecondaryNav';
 import SectionList from '../../sections/sectionList/SectionList';
@@ -26,10 +27,15 @@ export class RenderProjectDetails extends Component {
 
 					<section className='page-main'>
 						{
-							<SecondaryNav
-								page={'Section'}
-								link1={`/newsection/${project.projectId}`}
-							/>
+							<SectionsContext.Consumer>
+								{({ setFilterdSections }) => (
+									<SecondaryNav
+										page={'Section'}
+										link1={`/newsection/${project.projectId}`}
+										setContext={setFilterdSections}
+									/>
+								)}
+							</SectionsContext.Consumer>
 						}
 						{
 							<SectionList

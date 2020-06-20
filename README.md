@@ -19,7 +19,7 @@ Tasks: /api/tasks
 
 ## App Description
 
-App Dev Tracker gives you the power to organize and plan your
+App Dev Tracker gives you the power to organize and plan your  
 project. It also gives you the ability to track your progress while developing an app.
 
 ### Dashboard

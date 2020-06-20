@@ -1,4 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# App Dev Tracker
+
+Live link client:[ https://app-dev-tracker-client.vercel.app/
+](https://app-dev-tracker-client.vercel.app/)
+Live link server: [https://hidden-beyond-18972.herokuapp.com/api](https://hidden-beyond-18972.herokuapp.com/api)
+
+Link to client repo:[ https://github.com/IsaacElesia/app-dev-tracker-client](https://github.com/IsaacElesia/app-dev-tracker-client)
+
+Link to API repo: [https://github.com/IsaacElesia/app-dev-tracker-server](https://github.com/IsaacElesia/app-dev-tracker-server)
+
+## App Description
+
+App Dev Tracker gives you the power to organize and plan your
+project. It also gives you the ability to track your progress while developing an app.
+
+### Dashboard
+
+![Dashboard](/public/img/app-pics/dashboard.jpg) The dashboard shows you all the projects you are involved in and their status. It also gives you the ability to filter your projects according to their time status (late, past-due, on-time, and completed).
+
+### Project Details
+
+![Project Details](/public/img/app-pics/projectDetails.jpg) On the project detail page, you get to see the project description and all the sections that make up the project. You can also see the status of each section, that is whether it is late, past-due, on-time, or completed.
 
 ## Available Scripts
 

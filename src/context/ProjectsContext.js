@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const ProjectsContext = React.createContext({
 	projects: [],
 	project: {},
-	filterdProjects: null,
+	filterdProjects: 'all',
 });
 export default ProjectsContext;
 
@@ -11,7 +11,7 @@ export class ProjectsProvider extends Component {
 	state = {
 		projects: [],
 		project: {},
-		filterdProjects: null,
+		filterdProjects: 'all',
 	};
 
 	setProjects = (projects) => {

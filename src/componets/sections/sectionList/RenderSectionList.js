@@ -10,9 +10,15 @@ export class RenderSectionList extends Component {
 		const { filterdSections, sections } = this.context;
 		let sectionsToRender = [];
 
-		if (filterdSections) {
+		if (filterdSections === 'completed') {
 			sections.forEach((section) => {
 				if (section.completed) {
+					sectionsToRender.push(section);
+				}
+			});
+		} else if (filterdSections === 'undone') {
+			sections.forEach((section) => {
+				if (!section.completed) {
 					sectionsToRender.push(section);
 				}
 			});

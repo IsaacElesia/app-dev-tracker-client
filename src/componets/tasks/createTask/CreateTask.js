@@ -163,6 +163,7 @@ export class CreateSection extends Component {
 					handleSubmit={this.handleSubmit}
 					handleDisabled={this.handleDisabled}
 					handleError={this.handleError}
+					goBack={this.goBack}
 				/>
 			</>
 		);

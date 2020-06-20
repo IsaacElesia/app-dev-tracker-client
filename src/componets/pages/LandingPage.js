@@ -50,12 +50,12 @@ export class LandingPage extends Component {
 				<main className='wrapper'>
 					<section className='banner'>
 						<div className='image'>
-							<img src='/img/app-pics/dashboard.jpg' alt='the App' />
+							<img src='/img/app-pics/logo.png' alt='the App' />
 						</div>
 
 						<div className='content'>
 							<p>
-								App Dev Tracker, gives you the power to organize and plan your
+								App Dev Tracker gives you the power to organize and plan your
 								project. It also gives you the ability to track your progress
 								while developing an app.
 							</p>
@@ -72,7 +72,7 @@ export class LandingPage extends Component {
 						<div className='content'>
 							<h2 className='h2-landing'>Dashboard</h2>
 							<p>
-								The dashboard depicts all the projects you are involve in and
+								The dashboard shows you all the projects you are involved in and
 								their status. It also gives you the ability to filter your
 								projects according to their time status (late, past-due,
 								on-time, and completed).
@@ -91,10 +91,10 @@ export class LandingPage extends Component {
 						<div className='content'>
 							<h2 className='h2-landing'>Project Details</h2>
 							<p>
-								On the project detail page, you get to see all the project
+								On the project detail page, you get to see the project
 								description and all the sections that make up the project. You
-								can also see the status of each section, that is weather it is
-								late, past-due, on-time, or completed.?
+								can also see the status of each section, that is whether it is
+								late, past-due, on-time, or completed.
 							</p>
 						</div>
 					</section>
@@ -110,8 +110,8 @@ export class LandingPage extends Component {
 						<div className='content'>
 							<h2 className='h2-landing'>Section details</h2>
 							<p>
-								The section details page displays it’s description, picture, and
-								all the task to get done in other the complete that section of
+								The section detail page displays its description, picture, and
+								all the task to get done in other to complete that section of
 								the project.
 							</p>
 						</div>

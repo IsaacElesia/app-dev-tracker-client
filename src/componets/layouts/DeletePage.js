@@ -49,7 +49,7 @@ export class DeletePage extends Component {
 						className='btn-delete'
 						onClick={() => this.props.handleClose()}
 					>
-						Cancle
+						Cancel
 					</button>
 				</div>
 			</>

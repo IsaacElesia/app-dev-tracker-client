@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const TaskContext = React.createContext({
 	tasks: [],
 	task: {},
-	filterdTask: null,
+	filterdTask: 'all',
 });
 export default TaskContext;
 
@@ -11,7 +11,7 @@ export class TaskProvider extends Component {
 	state = {
 		tasks: [],
 		task: {},
-		filterdTask: null,
+		filterdTask: 'all',
 	};
 
 	setTasks = (tasks) => {

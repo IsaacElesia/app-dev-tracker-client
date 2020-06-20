@@ -9,9 +9,15 @@ export class RenderTaskList extends Component {
 		const { tasks, filterdTask } = this.context;
 		let taskToRender = [];
 
-		if (filterdTask) {
+		if (filterdTask === 'completed') {
 			tasks.forEach((task) => {
 				if (task.completed) {
+					taskToRender.push(task);
+				}
+			});
+		} else if (filterdTask === 'undone') {
+			tasks.forEach((task) => {
+				if (!task.completed) {
 					taskToRender.push(task);
 				}
 			});

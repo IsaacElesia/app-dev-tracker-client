@@ -10,9 +10,15 @@ export class RenderProjectList extends Component {
 		const { projects, filterdProjects } = this.context;
 		let projectRender = [];
 
-		if (filterdProjects) {
+		if (filterdProjects === 'completed') {
 			projects.forEach((project) => {
 				if (project.completed) {
+					projectRender.push(project);
+				}
+			});
+		} else if (filterdProjects === 'undone') {
+			projects.forEach((project) => {
+				if (!project.completed) {
 					projectRender.push(project);
 				}
 			});

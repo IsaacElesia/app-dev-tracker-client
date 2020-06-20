@@ -66,7 +66,7 @@ export class MainNav extends Component {
 							name='assign'
 							onClick={(e) => this.props.handleClick(e)}
 						>
-							Asign
+							Assign
 						</button>
 						<button
 							className='nav-btn'

@@ -13,7 +13,7 @@ export class RenderCreateTask extends Component {
 			<main className='reg'>
 				<div className='reg-form-header'>
 					<div className='page-nav-icons'>
-						<i className=' back-icon' onClick={() => this.goBack()}>
+						<i className=' back-icon' onClick={() => this.props.goBack()}>
 							<i className='fas fa-arrow-alt-circle-left'></i>
 						</i>
 						<h2 className='h2-section'>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const SectionsContext = React.createContext({
 	sections: [],
 	section: {},
-	filterdSections: null,
+	filterdSections: 'all',
 });
 export default SectionsContext;
 
@@ -11,7 +11,7 @@ export class SectionsProvider extends Component {
 	state = {
 		sections: [],
 		section: {},
-		filterdSections: null,
+		filterdSections: 'all',
 	};
 
 	setSections = (sections) => {

@@ -1,5 +1,5 @@
 const HelperService = {
-	limitDescription(description, limit = 40) {
+	limitDescription(description, limit = 30) {
 		const newDescription = [];
 		if (description.length > limit) {
 			description.split(' ').reduce((acc, cur) => {

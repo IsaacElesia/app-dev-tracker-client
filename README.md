@@ -47,10 +47,10 @@ the ability to mark the task completed once it is done.
 
 ## Technology Used
 
-HTML 5
-CSS 3
-JavaScript
-React js
-Node js
-Express js
+HTML 5  
+CSS 3  
+JavaScript  
+React js  
+Node js  
+Express js  
 PostgreSQL

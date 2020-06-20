@@ -11,10 +11,10 @@ Link to API repo: [https://github.com/IsaacElesia/app-dev-tracker-server](https:
 
 ## Backend Endpoints
 
-User login: /api/auth
-Users: /api/users
-Projects: /api/projects
-Sections: /api/sections
+User login: /api/auth  
+Users: /api/users  
+Projects: /api/projects  
+Sections: /api/sections  
 Tasks: /api/tasks
 
 ## App Description

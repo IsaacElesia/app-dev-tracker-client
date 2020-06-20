@@ -9,6 +9,11 @@ Link to client repo:[ https://github.com/IsaacElesia/app-dev-tracker-client](htt
 
 Link to API repo: [https://github.com/IsaacElesia/app-dev-tracker-server](https://github.com/IsaacElesia/app-dev-tracker-server)
 
+## demo credentials
+
+Email: demo@demo.com  
+Password: demodemo
+
 ## Backend Endpoints
 
 User login: /api/auth  

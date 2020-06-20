@@ -49,7 +49,7 @@ export class LandingPage extends Component {
 			<div>
 				<main className='wrapper'>
 					<section className='banner'>
-						<div className='image'>
+						<div className='image logo'>
 							<img src='/img/app-pics/logo.png' alt='the App' />
 						</div>
 

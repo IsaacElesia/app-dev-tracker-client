@@ -14,6 +14,13 @@
 		margin: 10% auto 0;
 	}
 }
+.logo {
+	img {
+		width: 40%;
+		display: flex;
+		margin: auto;
+	}
+}
 
 .banner {
 	height: 100vh;
@@ -45,6 +52,12 @@
 		p {
 			max-width: 400px;
 			margin: 0 auto;
+		}
+	}
+
+	.logo {
+		img {
+			margin: 10rem auto 0;
 		}
 	}
 

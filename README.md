@@ -24,20 +24,26 @@ project. It also gives you the ability to track your progress while developing a
 
 ### Dashboard
 
-![Dashboard](/public/img/app-pics/dashboard.jpg) The dashboard shows you all the projects you are involved in and their status. It also gives you the ability to filter your projects according to their time status (late, past-due, on-time, and completed).
+![Dashboard](/public/img/app-pics/dashboard.jpg) The dashboard shows you all the projects you are involved in and their status.
+It also gives you the ability to filter your projects according to their
+time status (late, past-due, on-time, and completed).
 
 ### Project Details
 
-![Project Details](/public/img/app-pics/projectsDetails.jpg) On the project detail page, you get to see the project description and all the sections that make up the project. You can also see the status of each section, that is whether it is late, past-due, on-time, or completed.
+![Project Details](/public/img/app-pics/projectsDetails.jpg) On the project detail page, you get to see the project description and
+all the sections that make up the project. You can also see the status of each
+section, that is whether it is late, past-due, on-time, or completed.
 
 ### Section details
 
-![Section details](/public/img/app-pics/sectionDetails.jpg) The section detail page displays its description, picture, and all the task to get done in other to complete that section of the project.
+![Section details](/public/img/app-pics/sectionDetails.jpg) The section detail page displays its description, picture, and all the task to
+get done in other to complete that section of the project.
 
 ### Task Details
 
 ![Task Details](/public/img/app-pics/taskDetails.jpg)
-On the task detail page, a description of the task is shown, and you have the ability to mark the task completed once it is done.
+On the task detail page, a description of the task is shown, and you have
+the ability to mark the task completed once it is done.
 
 ## Technology Used
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TimeService from '../../../services/time-service';
 import TaskContext from '../../../context/TaskContext';
+import HelperService from '../../../services/helper-service';
 
 export class RenderTaskList extends Component {
 	static contextType = TaskContext;
@@ -38,7 +39,9 @@ export class RenderTaskList extends Component {
 						</div>
 						<div className='card-details'>
 							<Link to={`/tasks/${task.taskId}`}>
-								<p className='task'>{task.description}</p>
+								<p className='task name'>
+									{HelperService.limitDescription(task.description)}
+								</p>
 								<p className='due'>
 									<span className='title'>Due Date</span>{' '}
 									{TimeService.formatDate(task.dueDate)}

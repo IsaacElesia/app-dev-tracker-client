@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import TimeService from '../../../services/time-service';
 import ProjectContext from '../../../context/ProjectsContext';
+import HelperService from '../../../services/helper-service';
 
 export class RenderProjectList extends Component {
 	static contextType = ProjectContext;
@@ -41,7 +42,9 @@ export class RenderProjectList extends Component {
 						</div>
 						<div className='card-details'>
 							<NavLink to={`/projects/${project.projectId}`}>
-								<p className='name'>{project.projectName}</p>
+								<p className='name'>
+									{HelperService.limitDescription(project.projectName)}
+								</p>
 								<p className='due'>
 									<span className='title'>Due Date</span>{' '}
 									{TimeService.formatDate(project.dueDate)}

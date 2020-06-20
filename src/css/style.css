@@ -419,7 +419,8 @@ p {
 }
 
 .card-details .name {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
   text-transform: capitalize;
 }
 
@@ -1055,7 +1056,6 @@ p {
 .content img,
 .image img {
   width: 100%;
-  margin-top: 2rem;
 }
 
 .content p,
@@ -1148,6 +1148,7 @@ p {
   left: 0;
   right: 0;
   height: 100vh;
+  z-index: 101;
   background-color: rgba(0, 0, 0, 0.3);
 }
 

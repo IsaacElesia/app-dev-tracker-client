@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import TimeService from '../../../services/time-service';
 import SectionsContext from '../../../context/SectionsContext';
+import HelperService from '../../../services/helper-service';
 
 export class RenderSectionList extends Component {
 	static contextType = SectionsContext;
@@ -46,7 +47,9 @@ export class RenderSectionList extends Component {
 									src='../img/login.png'
 									alt='login'
 								/>
-								<p className='name'>{section.sectionName}</p>
+								<p className='name'>
+									{HelperService.limitDescription(section.sectionName)}
+								</p>
 								<p className='due'>
 									<span className='title'>Due Date</span>{' '}
 									{TimeService.formatDate(section.dueDate)}

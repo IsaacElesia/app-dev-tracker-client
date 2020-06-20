@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import RenderCreateTask from '../RenderCreateTask';
 
 it('renders without crashing', () => {
 	const div = document.createElement('div');
 
-	ReactDOM.render(<App />, div);
+	ReactDOM.render(<RenderCreateTask />, div);
 
 	// clean up code
 	ReactDOM.unmountComponentAtNode(div);
